@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@color/new_ui_blue" >
+
+        <ImageButton
+            android:id="@+id/return_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/new_ui_return" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="设置"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp" >
+
+            <RelativeLayout
+                android:id="@+id/server_set_relativelayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textview1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center_vertical"
+                    android:text="服务器设置"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/editText1"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_below="@+id/textview1"
+                    android:background="@drawable/new_ui_login_setting_numtwo_border"
+                    android:hint="自定义名称"
+                    android:inputType="text"
+                    android:paddingLeft="65dp"
+                    android:textColorHint="#cccccc" />
+
+                <TextView
+                    android:id="@+id/name_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_alignBottom="@+id/editText1"
+                    android:layout_alignLeft="@+id/editText1"
+                    android:layout_alignTop="@+id/editText1"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="2dp"
+                    android:background="#ffffff"
+                    android:gravity="center_vertical"
+                    android:text="名称"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/server_set_title"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/new_ui_login_setting_numone_border"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="5dp"
+                    android:text="服务器配置存储"
+                    android:textSize="18sp" />
+
+                <ImageButton
+                    android:id="@+id/sure_button"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignRight="@+id/server_set_title"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/new_ui_login_setting_sure" />
+
+                <EditText
+                    android:id="@+id/editText2"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_below="@+id/editText1"
+                    android:background="@drawable/new_ui_login_setting_numtwo_border"
+                    android:hint="输入IP地址"
+                    android:inputType="text"
+                    android:paddingLeft="65dp"
+                    android:textColorHint="#cccccc" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_alignBottom="@+id/editText2"
+                    android:layout_alignLeft="@+id/name_title"
+                    android:layout_alignTop="@+id/editText2"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginTop="2dp"
+                    android:background="#ffffff"
+                    android:gravity="center_vertical"
+                    android:text="IP地址"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/editText3"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_below="@+id/editText2"
+                    android:background="@drawable/new_ui_login_setting_numthree_border"
+                    android:hint="输入IP端口"
+                    android:inputType="text"
+                    android:paddingLeft="65dp"
+                    android:text="10000"
+                    android:textColorHint="#cccccc" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_alignBottom="@+id/editText3"
+                    android:layout_alignLeft="@+id/name_title"
+                    android:layout_alignTop="@+id/editText3"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginTop="2dp"
+                    android:background="#ffffff"
+                    android:gravity="center_vertical"
+                    android:text="端口"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/user_set_relativelayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/server_set_relativelayout" >
+
+                <TextView
+                    android:id="@+id/textview5"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/new_ui_button_border_update"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="5dp"
+                    android:text="软件更新"
+                    android:textSize="18sp" />
+
+                <ImageButton
+                    android:id="@+id/self_update"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/textview5"
+                    android:layout_alignRight="@+id/textview5"
+                    android:layout_alignTop="@+id/textview5"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/new_ui_update_start" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/ftp_set_relativelayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/user_set_relativelayout" >
+
+                <TextView
+                    android:id="@+id/textview6"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/new_ui_login_setting_numone_border"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="5dp"
+                    android:text="FTP设置"
+                    android:textSize="18sp" />
+
+                <ImageButton
+                    android:id="@+id/ftp_sure_button"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@+id/textview6"
+                    android:layout_alignRight="@+id/textview6"
+                    android:layout_alignTop="@+id/textview6"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/new_ui_login_setting_sure" />
+
+                <EditText
+                    android:id="@+id/ftp_editText1"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_below="@+id/textview6"
+                    android:background="@drawable/new_ui_login_setting_numtwo_border"
+                    android:inputType="text"
+                    android:paddingLeft="65dp"
+                    android:textColorHint="#cccccc" />
+
+                <TextView
+                    android:id="@+id/ftp_name_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_alignBottom="@+id/ftp_editText1"
+                    android:layout_alignLeft="@+id/ftp_editText1"
+                    android:layout_alignTop="@+id/ftp_editText1"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="2dp"
+                    android:background="#ffffff"
+                    android:gravity="center_vertical"
+                    android:text="地址"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/ftp_editText2"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_below="@+id/ftp_editText1"
+                    android:background="@drawable/new_ui_login_setting_numtwo_border"
+                    android:inputType="text"
+                    android:paddingLeft="65dp"
+                    android:textColorHint="#cccccc" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_alignBottom="@+id/ftp_editText2"
+                    android:layout_alignLeft="@+id/ftp_name_title"
+                    android:layout_alignTop="@+id/ftp_editText2"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginTop="2dp"
+                    android:background="#ffffff"
+                    android:gravity="center_vertical"
+                    android:text="端口"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/ftp_editText3"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_below="@+id/ftp_editText2"
+                    android:background="@drawable/new_ui_login_setting_numtwo_border"
+                    android:inputType="text"
+                    android:paddingLeft="65dp"
+                    android:textColorHint="#cccccc" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_alignBottom="@+id/ftp_editText3"
+                    android:layout_alignLeft="@+id/ftp_name_title"
+                    android:layout_alignTop="@+id/ftp_editText3"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginTop="2dp"
+                    android:background="#ffffff"
+                    android:gravity="center_vertical"
+                    android:text="账户"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/ftp_editText4"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_below="@+id/ftp_editText3"
+                    android:background="@drawable/new_ui_login_setting_numthree_border"
+                    android:inputType="textPassword"
+                    android:paddingLeft="65dp"
+                    android:textColorHint="#cccccc" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_alignBottom="@+id/ftp_editText4"
+                    android:layout_alignLeft="@+id/ftp_editText4"
+                    android:layout_alignTop="@+id/ftp_editText4"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginTop="4dp"
+                    android:background="#ffffff"
+                    android:gravity="center_vertical"
+                    android:text="密码"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>

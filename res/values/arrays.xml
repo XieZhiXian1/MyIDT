@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="gps_period">
+        <item>30秒</item>
+        <item>1分钟</item>
+        <item>10分钟</item>
+        <item>1小时</item>
+        <item>1天</item>
+    </string-array>
+    <string-array name="gps_period_time">
+        <item>30</item>
+        <item>60</item>
+        <item>600</item>
+        <item>3600</item>
+        <item>86400</item>
+    </string-array>
+    <string-array name="open_as_items">
+        <item>视频</item>
+        <item>图片</item>
+    </string-array>
+    <string-array name="popup_sort">
+        <item>网格显示</item>
+        <item>列表显示（名称）</item>
+        <item>列表显示（大小）</item>
+        <item>列表显示（修改时间）</item>
+    </string-array>
+    <string-array name="popup_filter">
+        <item>所有</item>
+        <item>视频</item>
+        <item>图片</item>
+    </string-array>
+
+</resources>

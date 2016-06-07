@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/new_ui_blue"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center" >
+
+        <View
+            android:layout_width="@dimen/new_login_logo_width_height"
+            android:layout_height="@dimen/new_login_logo_width_height"
+            android:background="@drawable/new_ui_logo" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/adt_login_relativelayout"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="20.0dp"
+        android:layout_marginRight="20.0dp"
+        android:layout_weight="1.41" >
+
+        <EditText
+            android:id="@+id/login_edit_account"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/qq_edit_login"
+            android:hint="@string/strInputAccHint"
+            android:inputType="number"
+            android:maxLength="10"
+            android:paddingLeft="60.0dp"
+            android:saveEnabled="true"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/new_ui_textcolorhint" >
+            <requestFocus />
+        </EditText>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:layout_alignBottom="@+id/login_edit_account"
+            android:layout_alignLeft="@+id/login_edit_account_iamgebutton1"
+            android:layout_alignTop="@+id/login_edit_account"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="10dp"
+            android:background="#cccccc" />
+
+        <ImageButton
+            android:id="@+id/login_edit_account_iamgebutton1"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/login_edit_account"
+            android:layout_alignLeft="@+id/login_edit_account"
+            android:layout_alignTop="@+id/login_edit_account"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/new_ui_user_focus"
+            android:gravity="center_vertical" />
+
+        <ImageButton
+            android:id="@+id/login_edit_account_show_popupwindow"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/login_edit_account"
+            android:layout_alignRight="@+id/login_edit_account"
+            android:layout_alignTop="@+id/login_edit_account"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/new_ui_select_more_button" />
+     
+        <EditText
+            android:id="@+id/login_edit_pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/login_edit_account"
+            android:layout_alignRight="@+id/login_edit_account"
+            android:layout_below="@+id/login_edit_account"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/qq_edit_login"
+            android:hint="@string/strInputPswHint"
+            android:inputType="textPassword"
+            android:maxLength="16"
+            android:paddingLeft="60.0dp"
+            android:saveEnabled="true"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/new_ui_textcolorhint" />
+
+         <ImageButton
+            android:id="@+id/login_edit_passwd_cancel"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignBottom="@+id/login_edit_pwd"
+            android:layout_alignRight="@+id/login_edit_pwd"
+            android:layout_alignTop="@+id/login_edit_pwd"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/new_ui_quit_meeting_press_button" />
+         
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/login_edit_pwd"
+            android:layout_alignLeft="@+id/login_edit_pwd"
+            android:layout_alignRight="@+id/login_edit_account_iamgebutton1"
+            android:layout_alignTop="@+id/login_edit_pwd"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/new_ui_password_focus"
+            android:gravity="center_vertical" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:layout_alignBottom="@+id/login_edit_pwd"
+            android:layout_alignLeft="@+id/login_edit_account_iamgebutton1"
+            android:layout_alignTop="@+id/login_edit_pwd"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="10dp"
+            android:background="#cccccc" />
+
+        <EditText
+            android:id="@+id/login_edit_server_ip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/login_edit_pwd"
+            android:layout_alignRight="@+id/login_edit_pwd"
+            android:layout_below="@+id/login_edit_pwd"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/qq_edit_login"
+            android:hint="@string/strInputServerHint"
+            android:inputType="text"
+            android:maxLength="20"
+            android:paddingLeft="60.0dp"
+            android:saveEnabled="true"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/new_ui_textcolorhint" />
+
+        <ImageButton
+            android:id="@+id/login_edit_server_ip_select_button"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/login_edit_server_ip"
+            android:layout_alignRight="@+id/login_edit_account_show_popupwindow"
+            android:layout_alignTop="@+id/login_edit_server_ip"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/new_ui_select_more_button" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/login_edit_server_ip"
+            android:layout_alignLeft="@+id/login_edit_server_ip"
+            android:layout_alignRight="@+id/login_edit_account_iamgebutton1"
+            android:layout_alignTop="@+id/login_edit_server_ip"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/new_ui_server_focus"
+            android:gravity="center_vertical" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:layout_alignBottom="@+id/login_edit_server_ip"
+            android:layout_alignLeft="@+id/login_edit_account_iamgebutton1"
+            android:layout_alignTop="@+id/login_edit_server_ip"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="10dp"
+            android:background="#cccccc" />
+
+        <CheckBox
+            android:id="@+id/login_cb_savepwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/login_edit_server_ip"
+            android:layout_marginTop="20dp"
+            android:button="@drawable/qq_btn_check"
+            android:text="@string/opt_remember"
+            android:textColor="#ffffff"
+            android:textSize="16.0sp" />
+
+        <CheckBox
+            android:id="@+id/auto_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/login_cb_savepwd"
+            android:layout_alignBottom="@+id/login_cb_savepwd"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="20dp"
+            android:button="@drawable/qq_btn_check"
+            android:text="@string/opt_selfLogin"
+            android:textColor="#ffffff"
+            android:textSize="16.0sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="20.0dp"
+        android:layout_marginRight="20.0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/idt_login_summit_button"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/new_ui_login_login_button" />
+
+        <Button
+            android:id="@+id/setting_button"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/new_ui_login_setting" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center|top"
+            android:text="@string/company_name"
+            android:textColor="#cccccc" />
+    </LinearLayout>
+
+</LinearLayout>

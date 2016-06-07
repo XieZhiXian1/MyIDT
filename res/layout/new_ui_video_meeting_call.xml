@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/activity_audio_call_bk"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@color/new_ui_blue" >
+
+        <ImageButton
+            android:id="@+id/return_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/new_ui_logo"
+            android:onClick="onClick" />
+        <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_centerVertical="true"
+           android:layout_marginLeft="5dp"
+           android:layout_toRightOf="@+id/return_button"
+           android:orientation="vertical" >
+
+           <TextView
+               android:id="@+id/my_num_title"
+               android:layout_width="wrap_content"
+               android:layout_height="0dp"
+               android:layout_weight="1"
+               android:text="用户名(在线)"
+               android:textColor="#ffffff"
+               android:textSize="12sp" />
+
+           <TextView
+               android:id="@+id/my_num"
+               android:layout_width="wrap_content"
+               android:layout_height="0dp"
+               android:layout_weight="1"
+               android:text="2050"
+               android:textColor="#ffffff"
+               android:textSize="12sp" />
+       </LinearLayout>
+        <TextView
+            android:id="@+id/page_title_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="视频会议"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/new_ui_audio_call_toplayout"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5" >
+
+        <TextView
+            android:id="@+id/tv_group_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="10005"
+            android:textColor="#FFFFFFFF"
+            android:textSize="25sp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_group_number"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tv_talking_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="15dp"
+                android:text="主讲人员：空闲"
+                android:textColor="#ffffffff"
+                android:textSize="16sp" />
+
+            <Chronometer
+                android:id="@+id/chronometer_call_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="left"
+                android:layout_marginRight="15dp"
+                android:format="通话时间：%s"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/current_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:text="14:17:00"
+            android:textColor="#FFFFFFFF"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/stream"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:visibility="gone"
+            android:text="发送：100KB 接收：100KB"
+            android:textColor="#FFFFFFFF"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_video_answer"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:background="@drawable/new_ui_voice_call" >
+
+        <!-- 以下两个为视频显示的位置 -->
+
+        <SurfaceView
+            android:id="@+id/surfaceView_remote"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <SurfaceView
+            android:id="@+id/surfaceView_local"
+            android:layout_width="90dp"
+            android:layout_height="120dp"
+            android:layout_alignParentRight="true" />
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/new_ui_meeting_full_screen"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/new_ui_audio_call_bottomlayout"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="center" >
+
+        <ImageButton
+            android:id="@+id/btn_speak"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/new_ui_ppt01" />
+
+        <ImageButton
+            android:id="@+id/btn_hangup"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@+id/btn_speak"
+            android:background="@drawable/new_ui_voice_call_hung_up" />
+    </RelativeLayout>
+
+</LinearLayout>

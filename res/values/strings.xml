@@ -1,0 +1,52 @@
+<resources>
+
+    <string name="app_name">移动呼叫</string>
+    <string name="hello">Hello World, Date!</string>
+    <string name="strInputAccHint">用户名</string>
+    <string name="strInputServerHint">服务器IP</string>
+    <string name="strInputPswHint">密码</string>
+    <string name="strServerInputLabel">服务器</string>
+    <string name="strAccInputLabel">帐号</string>
+    <string name="strPswInputLabel">密码</string>
+    <string name="opt_remember">记住密码</string>
+    <string name="login">登 录</string>
+    <string name="text_ack_msg">已读</string>
+    <string name="opt_selfLogin">自动登录</string>
+    <string name="text_delivered_msg">送达</string>
+    <!--
+    <string name="opt_hideLogin">隐身登录</string>
+    <string name="opt_silent">静音登录</string>
+    <string name="opt_openVibra">开启振动</string>
+    <string name="opt_acceptGroupMsg">接收群消息</string>
+    -->
+    <string name="adt_group_title">群组</string>
+    <string name="button_pushtotalk">按住说话</string>
+    <string name="attach_take_pic">拍照</string>
+    <string name="attach_location">位置</string>
+    <string name="attach_file">文件</string>
+    <string name="attach_picture">图片</string>
+    <string name="attach_voice_call">语音电话</string>
+    <string name="btn_answer">接听</string>
+    <string name="btn_hangup">挂断</string>
+    <string name="recoding_fail">录音失败，请重试！</string>
+    <string name="move_up_to_cancel">手指上滑，取消发送</string>
+    <string name="release_to_cancel">松开手指，取消发送</string>
+    <string name="commany_indroduce">杭州确信科技有限公司</string>
+    <string name="commany_indroduce_file">杭州确信科技有限公司是专业从事研发、生产集群指挥调度系统产品的公司，作为国家创新型高新技术骨干企业，在长江三角洲、珠江三角洲均建立了重要的技术研发或生产基地。 公司经营范围为：计算机软硬件、电子产品、通讯设备的技术开发、技术服务、技术咨询，计算机系统集成及其他电子产品。公司研发的“Sure系列数字集群指挥系统”产品在多个领域都处于行业领先地位。</string>
+    <string name="contact_information">总      机：0755-82408888\n招聘热线：4008865539\n技术支持：0755-82122373\n邮 箱：szhr@szhr.com</string>
+    <string name="about_our_page_version">版本:</string>
+    <string name="upgrade_hint_updating">正在下载</string>
+    <string name="upgrade_hint_no_update">已是最新版本</string>
+    <string name="upgrade_hint_title">软件更新</string>
+    <string name="upgrade_hint_content">检测到新版本，立即更新吗？</string>
+    <string name="btn_upgrade">更新</string>
+    <string name="btn_upgrade_later">稍后更新</string>
+    <string name="btn_cancel">取消</string>
+    <string name="pull_to_refresh_pull_label">下拉刷新</string>
+    <string name="pull_to_refresh_release_label">松开后刷新</string>
+    <string name="pull_to_refresh_refreshing_label">刷新\u2026</string>
+    <string name="pull_to_refresh_footer_release_label">松开后加载</string>
+    <string name="pull_to_refresh_footer_pull_label">上拉加载更多</string>
+    <string name="pull_to_refresh_footer_refreshing_label">加载中\u2026</string>
+    <string name="company_name">杭州确信科技有限公司</string>
+</resources>

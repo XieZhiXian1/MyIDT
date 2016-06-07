@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/new_ui_login_setting_page_bk"
+    android:orientation="vertical" >
+
+    <include layout="@layout/new_ui_idt_title_layout" />
+
+    <ExpandableListView
+        android:id="@+id/buddy_expandablelistview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dip"
+        android:layout_weight="1"
+        android:cacheColorHint="#00000000"
+        android:choiceMode="singleChoice"
+        android:divider="@color/new_ui_group_item_divider_color"
+        android:dividerHeight="1dp"
+        android:drawSelectorOnTop="false"
+        android:fastScrollEnabled="false"
+        android:footerDividersEnabled="true"
+        android:groupIndicator="@null"
+        android:scrollbars="vertical"
+        android:scrollingCache="true" >
+    </ExpandableListView>
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        layout="@layout/new_ui_intercom_module" />
+
+</LinearLayout>

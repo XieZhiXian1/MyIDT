@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/new_ui_login_setting_page_bk"
+    android:orientation="vertical" >
+
+    <include layout="@layout/new_ui_idt_title_layout" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/idt_message_page_listview"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:listSelector="@drawable/list_bg_selector" >
+        </ListView>
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            layout="@layout/new_ui_intercom_module" />
+    </LinearLayout>
+
+</LinearLayout>

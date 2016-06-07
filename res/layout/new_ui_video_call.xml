@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/activity_audio_call_bk"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@color/new_ui_blue" >
+
+        <ImageButton
+            android:id="@+id/return_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/new_ui_logo"
+            android:onClick="onClick" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/return_button"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/my_num_title"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="用户名(在线)"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/my_num"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="2050"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/page_title_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="视频聊天"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/new_ui_audio_call_toplayout"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5" >
+
+        <TextView
+            android:id="@+id/singer_call_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="视频单呼"
+            android:textColor="#FFFFFFFF"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_call_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/singer_call_text"
+            android:layout_centerHorizontal="true"
+            android:text="用户名A"
+            android:textColor="#FFFFFFFF"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/tv_calling_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_call_number"
+            android:layout_centerHorizontal="true"
+            android:text="正在呼叫"
+            android:textColor="#FFFFFFFF"
+            android:textSize="16sp" />
+        <Chronometer
+            android:id="@+id/chronometer_call_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_call_number"
+            android:layout_centerHorizontal="true"
+            android:format="%s"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:visibility="invisible" />
+        <TextView
+            android:id="@+id/current_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:text="14:17:00"
+            android:textColor="#FFFFFFFF"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/stream"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:visibility="gone"
+            android:text="发送：100KB 接收：100KB"
+            android:textColor="#FFFFFFFF"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_video_answer"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:background="@drawable/new_ui_voice_call" >
+
+        <!-- 以下两个为视频显示的位置 -->
+
+        <SurfaceView
+            android:id="@+id/surfaceView_remote"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <SurfaceView
+            android:id="@+id/surfaceView_local"
+            android:layout_width="90dp"
+            android:layout_height="120dp"
+            android:layout_alignParentRight="true" />
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/new_ui_meeting_full_screen"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/new_ui_audio_call_bottomlayout"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="center" >
+
+        <ImageButton
+            android:id="@+id/ll_answer"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/new_ui_voice_call_answer" />
+
+        <TextView
+            android:id="@+id/new_ui_video_call_divide0"
+            android:layout_width="30dp"
+            android:layout_height="fill_parent" />
+
+        <ImageButton
+            android:id="@+id/ll_hangup"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/new_ui_voice_call_hung_up" />
+
+        <TextView
+            android:id="@+id/new_ui_video_call_divide1"
+            android:layout_width="30dp"
+            android:layout_height="fill_parent"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/btn_hangup"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/new_ui_voice_call_hung_up"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</LinearLayout>

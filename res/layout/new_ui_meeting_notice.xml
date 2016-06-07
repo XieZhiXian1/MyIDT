@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/chat_title"
+        layout="@layout/new_ui_idt_title_otherpage_layout" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/notice_content"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="8"
+            android:background="@drawable/new_ui_metting_notice_border"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:background="@color/new_ui_blue" >
+
+                <ImageButton
+                    android:id="@+id/link_icon_button"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/new_ui_metting_link_press" />
+
+                <TextView
+                    android:id="@+id/page_title_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@+id/link_icon_button"
+                    android:text="会议名称"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp" >
+
+                <TextView
+                    android:id="@+id/editText1"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="2dp"
+                    android:background="#ffffff"
+                    android:gravity="bottom"
+                    android:paddingLeft="100dp" >
+                </TextView>
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_below="@+id/editText1"
+                    android:background="#cccccc" />
+
+                <TextView
+                    android:id="@+id/name_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@+id/editText1"
+                    android:layout_alignTop="@+id/editText1"
+                    android:background="#ffffff"
+                    android:gravity="center_vertical"
+                    android:text="发起人："
+                    android:textColor="#ff007ed5"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/editText2"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/editText1"
+                    android:layout_marginTop="2dp"
+                    android:background="#ffffff"
+                    android:gravity="bottom"
+                    android:paddingLeft="100dp" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_below="@+id/editText2"
+                    android:background="#cccccc" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@+id/editText2"
+                    android:layout_alignTop="@+id/editText2"
+                    android:background="#ffffff"
+                    android:gravity="center_vertical"
+                    android:text="日期时间："
+                    android:textColor="#ff007ed5"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/editText3"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/editText2"
+                    android:layout_marginTop="2dp"
+                    android:background="#ffffff"
+                    android:paddingLeft="80dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@+id/editText3"
+                    android:layout_alignTop="@+id/editText3"
+                    android:background="#ffffff"
+                    android:gravity="center_vertical"
+                    android:text="议题："
+                    android:textColor="#ff007ed5"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/editText4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/editText3"
+                    android:layout_marginTop="2dp"
+                    android:background="#ffffff"
+                    android:text="临时会议"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/ok_or_cancel_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/meeting_accept_button"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/new_ui_metting_accept" />
+
+            <Button
+                android:id="@+id/meeting_refuse_button"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/new_ui_metting_refuse" />
+        </RelativeLayout>
+
+        <include
+            android:id="@+id/chat_title"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            layout="@layout/new_ui_intercom_module"
+            android:minHeight="150dp" />
+    </LinearLayout>
+
+</LinearLayout>

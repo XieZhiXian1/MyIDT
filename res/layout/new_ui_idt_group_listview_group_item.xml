@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="50dp"
+    android:background="#ffffffff" >
+
+    <ImageView
+        android:id="@+id/idt_group_fold_arrow_image"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/new_ui_group_page_arrow_close" />
+
+    <TextView
+        android:id="@+id/idt_listview_group_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="40dp"
+        android:text="测试一组"
+        android:textColor="#ff000000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/idt_listview_group_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/idt_listview_group_name"
+        android:text="(10/20)"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/idt_to_group_message_image"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="55dp"
+        android:clickable="true"
+        android:focusable="false"
+        android:src="@drawable/new_ui_idt_to_group_message_image" />
+
+    <ImageView
+        android:id="@+id/idt_lock_image"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:clickable="true"
+        android:focusable="false"
+        android:src="@drawable/new_ui_idt_lock" />
+
+</RelativeLayout>

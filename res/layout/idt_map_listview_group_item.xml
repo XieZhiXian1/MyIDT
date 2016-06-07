@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="30dip"
+    >
+
+    <ImageView
+        android:id="@+id/idt_default_group_image"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/idt_group_fold_arrow_image"
+        android:src="@drawable/new_ui_map_group_member_p" />
+
+    <TextView
+        android:id="@+id/idt_listview_group_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textStyle="bold"
+        android:layout_toRightOf="@+id/idt_default_group_image"
+        android:text="100001"
+        android:textSize="16sp" />
+
+    <CheckBox
+        android:id="@+id/idt_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:clickable="true"
+        android:focusable="false" >
+    </CheckBox>
+
+</RelativeLayout>

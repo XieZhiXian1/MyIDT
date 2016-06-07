@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/tabhost"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#969594" />
+
+        <RadioGroup
+            android:id="@+id/adt_main_radio"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:background="#EFEEEE"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/adt_mainTabs_radio_group"
+                style="@style/main_tab_bottom"
+                android:drawableTop="@drawable/new_ui_group"
+                android:text="群组"
+                android:textColor="@drawable/idt_tabhost_text_color" />
+
+            <RadioButton
+                android:id="@+id/adt_mainTabs_radio_message"
+                style="@style/main_tab_bottom"
+                android:layout_marginLeft="2dp"
+                android:drawableTop="@drawable/new_ui_message"
+                android:text="消息"
+                android:textColor="@drawable/idt_tabhost_text_color" />
+            
+            <RadioButton
+                android:id="@+id/adt_mainTabs_radio_work"
+                style="@style/main_tab_bottom"
+                android:layout_marginLeft="2dp"
+                android:drawableTop="@drawable/new_ui_message"
+                android:text="工作"
+                android:textColor="@drawable/idt_tabhost_text_color" />
+
+            <RadioButton
+                android:id="@+id/adt_mainTabs_radio_setting"
+                style="@style/main_tab_bottom"
+                 android:layout_marginLeft="2dp"
+                android:drawableTop="@drawable/new_ui_main_setting"
+                android:text="设置"
+                android:textColor="@drawable/idt_tabhost_text_color" />
+        </RadioGroup>
+    </LinearLayout>
+
+</TabHost>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="150dp" >
+
+    <TextView
+        android:id="@+id/intercom_state_textview"
+        android:layout_width="180dp"
+        android:layout_height="70dp"
+        android:layout_centerVertical="true"
+        android:background="@drawable/new_ui_say_right_state_otherone"
+        android:gravity="center"
+        android:paddingLeft="35dp"
+        android:paddingRight="5dp"
+        android:layout_marginLeft="20dp"
+        android:text="当前话权空闲"
+        android:textColor="#ff007ed5" />
+    
+    <TextView
+        android:id="@+id/intercom_other_image"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="4dp"
+        android:background="@drawable/new_ui_no_say_button"
+        android:layout_alignLeft="@+id/intercom_state_textview" />
+    
+    <ImageButton
+        android:id="@+id/intercom_button"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/new_ui_ppt01" />
+
+</RelativeLayout>

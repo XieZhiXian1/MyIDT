@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/activity_audio_call_bk"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/new_ui_audio_call_toplayout"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="单呼"
+            android:textColor="#FFFFFFFF"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_call_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="用户名A"
+            android:textColor="#FFFFFFFF"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/tv_calling_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_call_number"
+            android:layout_centerHorizontal="true"
+            android:text="正在呼叫"
+            android:textColor="#FFFFFFFF"
+            android:textSize="16sp" />
+
+        <Chronometer
+            android:id="@+id/chronometer_call_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_call_number"
+            android:layout_centerHorizontal="true"
+            android:format="%s"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/current_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:text="2016-04-16 14:17:00"
+            android:textColor="#FFFFFFFF"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:text="500Kbps"
+            android:visibility="gone"
+            android:textColor="#FFFFFFFF"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <ImageButton
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:background="@drawable/new_ui_voice_call" />
+
+    <RelativeLayout
+        android:id="@+id/new_ui_audio_call_bottomlayout"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2" >
+
+        <ImageButton
+            android:id="@+id/voice_to_video_button"
+            android:layout_width="35dp"
+            android:layout_height="20dp"
+            android:visibility="gone"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/new_ui_voice_call_video" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:text="经纬度"
+            android:visibility="gone"
+            android:textColor="#FFFFFFFF"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="35dp"
+            android:gravity="center" >
+
+            <ImageButton
+            android:id="@+id/ll_answer"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/new_ui_voice_call_answer" />
+
+        <TextView
+            android:id="@+id/new_ui_video_call_divide0"
+            android:layout_width="30dp"
+            android:layout_height="fill_parent" />
+
+        <ImageButton
+            android:id="@+id/ll_hangup"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/new_ui_voice_call_hung_up" />
+
+        <TextView
+            android:id="@+id/new_ui_video_call_divide1"
+            android:layout_width="30dp"
+            android:layout_height="fill_parent"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/btn_hangup"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/new_ui_voice_call_hung_up"
+            android:visibility="gone" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

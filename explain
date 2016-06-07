@@ -1,0 +1,448 @@
+//及时消息类型
+
+public static final String KEY_COLUMN_7_SMS_RESOURCE_TYPE = "sms_resource_type";
+#define IM_TYPE_NONE            0x00        //无
+//01~7f需要存储转发,用户确认收到的
+#define IM_TYPE_TXT             0x01        //只有文本                  不需要文件          from + to + text
+#define IM_TYPE_GPS             0x02        //GPS位置信息               不需要文件          from + to + text(字符串:经度,纬度)
+#define IM_TYPE_IMAGE           0x03        //图像                      需要文件            from + to + text + filename
+#define IM_TYPE_AUDIO           0x04        //语音文件,微信             需要文件            from + to + text + filename
+#define IM_TYPE_VIDEO           0x05        //视频录像文件              需要文件            from + to + text + filename
+
+                                0x06        任意文件
+                                0x07        单呼语音呼叫
+                                0x08        单呼视频呼叫
+                                0x09        群呼语音呼叫
+                                0x011       会议
+//0x80~0xff不需要存储转发,用户确认接收的
+#define IM_TYPE_USER            0xff        //用户自定义                不需要文件
+
+KEY_COLUMN_3_SMS_TYPE, //#sms_type ：0:all 1:inBox(无论短信还是电话进来) 2:sent(出去) 3:draft(草稿) 4:outBox(发件箱) 5:failed 6:queued
+
+KEY_COLUMN_10_SMS_RESOURCE_RS_OK  //0:还没有发送成功，或者接受成功   1:已经发送成功或者接受成功
+
+
+char *GetCausuStr(USHORT usCause)
+{
+    static char cBuf[32];
+    if (CAUSE_TIMER_EXPIRY == (usCause & 0xff))
+    {
+        WORD ucSrc = (usCause & 0xc000);
+        UCHAR ucH = (usCause & 0x3f00) >> 8;
+        switch (ucSrc)
+        {
+        case CAUSE_EXPIRE_IDT://IDT定时器超时
+            sprintf(cBuf, "定时器超时:IDT-%d\r\n", ucH);
+            break;
+        case CAUSE_EXPIRE_MC://MC定时器超时
+            sprintf(cBuf, "定时器超时:MC-%d\r\n", ucH);
+            break;
+        case CAUSE_EXPIRE_MG://MG定时器超时
+            sprintf(cBuf, "定时器超时:MG-%d\r\n", ucH);
+            break;
+        default:
+            sprintf(cBuf, "定时器超时:%d-%d\r\n", ucSrc, ucH);
+            break;
+        }
+        return cBuf;
+    }
+    
+    switch (usCause)
+    {
+    case CAUSE_ZERO:
+        return (char*)"错误0";
+    case CAUSE_UNASSIGNED_NUMBER:
+        return (char*)"未分配号码";
+    case CAUSE_NO_ROUTE_TO_DEST:
+        return (char*)"无目的路由";
+    case CAUSE_USER_BUSY:
+        return (char*)"用户忙";
+    case CAUSE_ALERT_NO_ANSWER:
+        return (char*)"用户无应答(人不应答)";
+    case CAUSE_CALL_REJECTED:
+        return (char*)"呼叫被拒绝";
+    case CAUSE_ROUTING_ERROR:
+        return (char*)"路由错误";
+    case CAUSE_FACILITY_REJECTED:
+        return (char*)"设备拒绝";
+    case CAUSE_NORMAL_UNSPECIFIED:
+        return (char*)"通常,未指定";
+    case CAUSE_TEMPORARY_FAILURE:
+        return (char*)"临时错误";
+    case CAUSE_RESOURCE_UNAVAIL:
+        return (char*)"资源不可用";
+    case CAUSE_INVALID_CALL_REF:
+        return (char*)"不正确的呼叫参考号";
+    case CAUSE_MANDATORY_IE_MISSING:
+        return (char*)"必选信息单元丢失";
+    case CAUSE_TIMER_EXPIRY:
+        return (char*)"定时器超时";
+    case CAUSE_CALL_REJ_BY_USER:
+        return (char*)"被用户拒绝";
+    case CAUSE_CALLEE_STOP:
+        return (char*)"被叫停止";
+    case CAUSE_USER_NO_EXIST:
+        return (char*)"用户不存在";
+    case CAUSE_MS_UNACCESSAVLE:
+        return (char*)"不可接入";
+    case CAUSE_MS_POWEROFF:
+        return (char*)"用户关机";
+    case CAUSE_FORCE_RELEASE:
+        return (char*)"强制拆线";
+    case CAUSE_HO_RELEASE:
+        return (char*)"切换拆线";
+    case CAUSE_CALL_CONFLICT:
+        return (char*)"呼叫冲突";
+    case CAUSE_TEMP_UNAVAIL:
+        return (char*)"暂时无法接通";
+    case CAUSE_AUTH_ERROR:
+        return (char*)"鉴权错误";
+    case CAUSE_NEED_AUTH:
+        return (char*)"需要鉴权";
+    case CAUSE_SDP_SEL:
+        return (char*)"SDP选择错误";
+    case CAUSE_MS_ERROR:
+        return (char*)"媒体资源错误";
+    case CAUSE_INNER_ERROR:
+        return (char*)"内部错误";
+    case CAUSE_PRIO_ERROR:
+        return (char*)"优先级不够";
+    case CAUSE_SRV_CONFLICT:
+        return (char*)"业务冲突";
+    case CAUSE_NOTREL_RECALL:
+        return (char*)"由于业务要求,不释放,启动重呼定时器";
+    case CAUSE_NO_CALL:
+        return (char*)"呼叫不存在";
+    case CAUSE_ERROR_IPADDR:
+        return (char*)"错误IP地址过来的呼叫";
+    case CAUSE_DUP_REG:
+        return (char*)"重复注册";
+    case CAUSE_MG_OFFLINE:
+        return (char*)"MG离线";
+    case CAUSE_DISP_REQ_QUITCALL:
+        return (char*)"调度员要求退出呼叫";
+    case CAUSE_DB_ERROR:
+        return (char*)"数据库操作错误";
+    case CAUSE_TOOMANY_USER:
+        return (char*)"用户数太多";
+    case CAUSE_SAME_USERNUM:
+        return (char*)"相同的用户号码";
+    case CAUSE_SAME_USERIPADDR:
+        return (char*)"相同的固定IP地址";
+    case CAUSE_PARAM_ERROR:
+        return (char*)"参数错误";
+    case CAUSE_SAME_GNUM:
+        return (char*)"相同的组号码";
+    case CAUSE_TOOMANY_GROUP:
+        return (char*)"太多的组";
+    case CAUSE_NO_GROUP:
+        return (char*)"没有这个组";
+    case CAUSE_SAME_USERNAME:
+        return (char*)"相同的用户名字";
+    case CAUSE_OAM_OPT_ERROR:
+        return (char*)"OAM操作错误";
+
+    default:
+        sprintf(cBuf, "CAUSE=%d\r\n", usCause);
+        return cBuf;
+    }
+}
+
+char *GetSrvMsgStr(WORD wMsgId)
+{
+    static char cBuf[32];
+
+    switch (wMsgId)
+    {
+    case MSG_TRANS:
+        return (char*)"MSG_TRANS";
+    case MSG_HB:
+        return (char*)"MSG_HB";
+    case MSG_MM_REGREQ:
+        return (char*)"MSG_MM_REGREQ";
+    case MSG_MM_REGRSP:
+        return (char*)"MSG_MM_REGRSP";
+    case MSG_MM_ACCREQ:
+        return (char*)"MSG_MM_ACCREQ";
+    case MSG_MM_ACCRSP:
+        return (char*)"MSG_MM_ACCRSP";
+    case MSG_MM_ROUTEREQ:
+        return (char*)"MSG_MM_ROUTEREQ";
+    case MSG_MM_ROUTERSP:
+        return (char*)"MSG_MM_ROUTERSP";
+    case MSG_MM_PROFREQ:
+        return (char*)"MSG_MM_PROFREQ";
+    case MSG_MM_PROFRSP:
+        return (char*)"MSG_MM_PROFRSP";
+    case MSG_MM_QUIT:
+        return (char*)"MSG_MM_QUIT";
+    case MSG_MM_MODREQ:
+        return (char*)"MSG_MM_MODREQ";
+    case MSG_MM_MODRSP:
+        return (char*)"MSG_MM_MODRSP";
+    case MSG_MM_PASSTHROUGH:
+        return (char*)"MSG_MM_PASSTHROUGH";
+    case MSG_MG_BINDREQ:
+        return (char*)"MSG_MG_BINDREQ";
+    case MSG_MG_BINDRSP:
+        return (char*)"MSG_MG_BINDRSP";
+    case MSG_MG_IVRREQ:
+        return (char*)"MSG_MG_IVRREQ";
+    case MSG_MG_IVRRSP:
+        return (char*)"MSG_MG_IVRRSP";
+    case MSG_MG_CONNREQ:
+        return (char*)"MSG_MG_CONNREQ";
+    case MSG_MG_CONNRSP:
+        return (char*)"MSG_MG_CONNRSP";
+    case MSG_MG_MODIFYREQ:
+        return (char*)"MSG_MG_MODIFYREQ";
+    case MSG_MG_MODIFYRSP:
+        return (char*)"MSG_MG_MODIFYRSP";
+    case MSG_MG_DISCREQ:
+        return (char*)"MSG_MG_DISCREQ";
+    case MSG_MG_DISCRSP:
+        return (char*)"MSG_MG_DISCRSP";
+    case MSG_MG_BINDCLR:
+        return (char*)"MSG_MG_BINDCLR";
+    case MSG_MG_EVENT:
+        return (char*)"MSG_MG_EVENT";
+    case MSG_MG_STATEIND:
+        return (char*)"MSG_MG_STATEIND";
+    case MSG_CC_SETUP:
+        return (char*)"MSG_CC_SETUP";
+    case MSG_CC_SETUPACK:
+        return (char*)"MSG_CC_SETUPACK";
+    case MSG_CC_ALERT:
+        return (char*)"MSG_CC_ALERT";
+    case MSG_CC_CONN:
+        return (char*)"MSG_CC_CONN";
+    case MSG_CC_CONNACK:
+        return (char*)"MSG_CC_CONNACK";
+    case MSG_CC_INFO:
+        return (char*)"MSG_CC_INFO";
+    case MSG_CC_INFOACK:
+        return (char*)"MSG_CC_INFOACK";
+    case MSG_CC_MODIFY:
+        return (char*)"MSG_CC_MODIFY";
+    case MSG_CC_MODIFYACK:
+        return (char*)"MSG_CC_MODIFYACK";
+    case MSG_CC_REL:
+        return (char*)"MSG_CC_REL";
+    case MSG_CC_RLC:
+        return (char*)"MSG_CC_RLC";
+    case MSG_OAM_REQ:
+        return (char*)"MSG_OAM_REQ";
+    case MSG_OAM_RSP:
+        return (char*)"MSG_OAM_RSP";
+    case MSG_MAX:
+        return (char*)"MSG_MAX";
+    default:
+        sprintf(cBuf, "MSGID=%d\r\n", wMsgId);
+        return cBuf;
+    }
+}
+
+char *GetOamOptStr(DWORD dwOpt)
+{
+    switch (dwOpt)
+    {
+    case OPT_USER_ADD:
+        return (char*)"OPT_USER_ADD";
+    case OPT_USER_DEL:
+        return (char*)"OPT_USER_DEL";
+    case OPT_USER_MODIFY:
+        return (char*)"OPT_USER_MODIFY";
+    case OPT_USER_QUERY:
+        return (char*)"OPT_USER_QUERY";
+    case OPT_G_ADD:
+        return (char*)"OPT_G_ADD";
+    case OPT_G_DEL:
+        return (char*)"OPT_G_DEL";
+    case OPT_G_MODIFY:
+        return (char*)"OPT_G_MODIFY";
+    case OPT_G_QUERY:
+        return (char*)"OPT_G_QUERY";
+    case OPT_G_ADDUSER:
+        return (char*)"OPT_G_ADDUSER";
+    case OPT_G_DELUSER:
+        return (char*)"OPT_G_DELUSER";
+    case OPT_G_MODIFYUSER:
+        return (char*)"OPT_G_MODIFYUSER";
+    case OPT_G_QUERYUSER:
+        return (char*)"OPT_G_QUERYUSER";
+    case OPT_U_QUERYGROUP:
+        return (char*)"OPT_U_QUERYGROUP";
+    default:
+        return (char*)"OPT_MAX";
+    }
+}
+
+
+char *GetSrvTypeStr(SRV_TYPE_e SrvType)
+{
+    switch (SrvType)
+    {
+    case SRV_TYPE_NONE:
+        return (char*)"SRV_TYPE_NONE";
+    case SRV_TYPE_BASIC_CALL:
+        return (char*)"SRV_TYPE_BASIC_CALL";
+    case SRV_TYPE_CONF:
+        return (char*)"SRV_TYPE_CONF";
+    case SRV_TYPE_CONF_JOIN:
+        return (char*)"SRV_TYPE_CONF_JOIN";
+    case SRV_TYPE_FORCE_INJ:
+        return (char*)"SRV_TYPE_FORCE_INJ";
+    case SRV_TYPE_FORCE_REL:
+        return (char*)"SRV_TYPE_FORCE_REL";
+    case SRV_TYPE_WATCH:
+        return (char*)"SRV_TYPE_WATCH";
+    case SRV_TYPE_WATCH_TRUNK:
+        return (char*)"SRV_TYPE_WATCH_TRUNK";
+    case SRV_TYPE_IM:
+        return (char*)"SRV_TYPE_IM";
+    case SRV_TYPE_MAX:
+        return (char*)"SRV_TYPE_MAX";
+    default:
+        return (char*)"SRV_TYPE_NONE";
+    }
+}
+
+char *GetImCodeStr(UCHAR ucCode)
+{
+    static char cBuf[32];    
+    switch (ucCode)
+    {
+    case PTE_CODE_TXREQ://发送请求
+        return (char*)"发送请求";
+    case PTE_CODE_TXCFM:
+        return (char*)"传输确认";
+    case PTE_CODE_USRREAD:
+        return (char*)"用户阅读";
+    case PTE_CODE_USRREADCFM:
+        return (char*)"用户阅读消息的确认";
+    case PTE_CODE_FILENAMEREQ:
+        return (char*)"文件名请求";
+    case PTE_CODE_FILENAMERSP:
+        return (char*)"文件名响应";
+    default:
+        sprintf(cBuf, "IMCode=%d\r\n", ucCode);
+        return cBuf;
+    }
+}
+
+char *GetImTypeStr(DWORD dwType)
+{
+    static char cBuf[32];    
+    switch (dwType)
+    {
+    case IM_TYPE_NONE:
+        return (char*)"无";
+//01~7f需要存储转发,用户确认收到的
+    case IM_TYPE_TXT:
+        return (char*)"文本";
+    case IM_TYPE_GPS:
+        return (char*)"GPS";
+    case IM_TYPE_IMAGE:
+        return (char*)"图像";
+    case IM_TYPE_AUDIO:
+        return (char*)"语音文件";
+    case IM_TYPE_VIDEO:
+        return (char*)"视频文件";
+//0x80~0xff不需要存储转发,用户确认接收的
+    case IM_TYPE_NSSUBS:
+        return (char*)"存储订阅";
+    case IM_TYPE_NSQUERYREQ:
+        return (char*)"存储查询";
+    case IM_TYPE_NSQUERYRSP:
+        return (char*)"存储查询响应";
+    case IM_TYPE_USER:
+        return (char*)"用户自定义";
+    default:
+        sprintf(cBuf, "IMType=%d\r\n", (int)dwType);
+        return cBuf;
+    }
+}
+
+char *GetGUTypeStr(UCHAR ucType)
+{
+    static char cBuf[32];
+    switch (ucType)
+    {
+    case GROUP_MEMBERTYPE_USER:
+        return (char*)"用户";
+    case GROUP_MEMBERTYPE_GROUP:
+        return (char*)"组";
+    default:
+        sprintf(cBuf, "GUType=%d\r\n", ucType);
+        return cBuf;
+    }
+}
+
+char *GetStatusStr(UCHAR ucStatus)
+{
+    static char cBuf[32];
+    switch (ucStatus)
+    {
+    case UT_STATUS_OFFLINE:
+        return (char*)"离线";
+    case UT_STATUS_ONLINE:
+        return (char*)"在线";
+    default:
+        sprintf(cBuf, "Status=%d\r\n", ucStatus);
+        return cBuf;
+    }
+}
+
+char *GetCallTypeStr(UCHAR ucCallType)
+{
+    static char cBuf[32];
+    switch (ucCallType)
+    {
+    case SRV_TYPE_BASIC_CALL:
+        return (char*)"基本呼叫";
+    case SRV_TYPE_CONF:
+        return (char*)"会议";
+    case SRV_TYPE_CONF_JOIN:
+        return (char*)"会议";
+    case SRV_TYPE_FORCE_INJ:
+        return (char*)"强插";
+    case SRV_TYPE_FORCE_REL:
+        return (char*)"强拆";
+    case SRV_TYPE_WATCH:
+        return (char*)"监控";
+    case SRV_TYPE_WATCH_TRUNK:
+        return (char*)"监控";
+    case SRV_TYPE_NS_CALL:
+        return (char*)"存储呼叫";
+    default:
+        sprintf(cBuf, "CallType=%d\r\n", ucCallType);
+        return cBuf;
+    }
+}
+
+char *GetCallStatusStr(UCHAR ucCallStatus)
+{
+    static char cBuf[32];
+    switch (ucCallStatus)
+    {
+    case GU_STATUSCALL_IDLE:
+        return (char*)"空闲";
+    case GU_STATUSCALL_OALERT:
+        return (char*)"主叫回铃";
+    case GU_STATUSCALL_TALERT:
+        return (char*)"被叫振铃";
+    case GU_STATUSCALL_TALKING:
+        return (char*)"通话";
+    case GU_STATUSCALL_G_TALKING:
+        return (char*)"会议讲话";
+    case GU_STATUSCALL_G_LISTEN:
+        return (char*)"会议听话";
+    default:
+        sprintf(cBuf, "CallStatus=%d\r\n", ucCallStatus);
+        return cBuf;
+    }
+}
+
+//用户状态
+#define UT_STATUS_OFFLINE   0       //离线
+#define UT_STATUS_ONLINE    1       //在线

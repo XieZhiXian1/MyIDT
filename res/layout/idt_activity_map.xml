@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="0px"
+        android:layout_height="0px"
+        android:focusable="true"
+        android:focusableInTouchMode="true" />
+    <include layout="@layout/new_ui_idt_title_map_layout" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:background="@drawable/new_ui_map_leftwindow_first_border"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="全部归属组"
+                    android:textColor="#505050"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="fill_parent"
+                    android:layout_marginRight="5dp"
+                    android:background="#cccccc" />
+
+                <Button
+                    android:id="@+id/pop_zoom"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/new_ui_map_open"
+                    android:gravity="center_vertical"
+                    android:onClick="onClick" />
+            </LinearLayout>
+
+            <ExpandableListView
+                android:id="@+id/buddy_expandablelistview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/new_ui_map_leftwindow_border"
+                android:cacheColorHint="#00000000"
+                android:choiceMode="singleChoice"
+                android:dividerHeight="1dp"
+                android:drawSelectorOnTop="false"
+                android:fastScrollEnabled="false"
+                android:footerDividersEnabled="true"
+                android:groupIndicator="@null"
+                android:scrollbars="vertical"
+                android:scrollingCache="true" >
+            </ExpandableListView>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/singer_call"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/new_ui_map_call_button" />
+
+        <Button
+            android:id="@+id/message"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/singer_call"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/new_ui_map_message_button" />
+
+        <Button
+            android:id="@+id/scan_vedio"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/message"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/new_ui_map_video_button" />
+        
+        <Button
+            android:id="@+id/scan_big"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/scan_vedio"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/new_ui_map_big" />
+        
+        <Button
+            android:id="@+id/scan_small"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/scan_big"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/new_ui_map_small" />
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_alignParentBottom="true"
+            layout="@layout/new_ui_intercom_module_noback" />
+
+        <TextView
+            android:id="@+id/current_member"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/singer_call"
+            android:layout_alignBottom="@+id/singer_call"
+            android:layout_toLeftOf="@+id/singer_call"
+            android:layout_marginRight="5dp"
+            android:textColor="#0064c8"
+            android:visibility="gone"
+            android:background="@null"
+            android:text="2053" />
+
+    </RelativeLayout>
+
+</LinearLayout>

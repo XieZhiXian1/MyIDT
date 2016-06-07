@@ -1,0 +1,78 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    tools:context=".MainActivity2" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/top" >
+
+
+        <ImageView
+            android:id="@+id/titleline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="22dp"
+            android:layout_toRightOf="@+id/title_arrow_back"
+            android:src="@drawable/title_line" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/titleline"
+            android:text="消息"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/title_home"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/idt_map_icon" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#fcfcfc"
+        android:orientation="vertical" >
+<!--  
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/search_bar_bg"
+            android:gravity="center" >
+
+            <EditText
+                android:id="@+id/editText1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/search_bar_edit_bg"
+                android:drawableLeft="@drawable/search_bar_icon_normal"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:hint="搜索"
+                android:singleLine="true"
+                android:textColor="#000" >
+            </EditText>
+        </LinearLayout>
+-->
+        <ListView
+            android:id="@+id/idt_message_page_listview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:listSelector="@drawable/list_bg_selector" >
+        </ListView>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    
+    <PreferenceCategory android:title="连接配置" >
+        <EditTextPreference
+            android:defaultValue="10000"
+            android:key="server_port"
+            android:summary="服务器端口号"
+            android:title="服务器端口号" />
+        <EditTextPreference
+            android:defaultValue="/data/data/com.ids.idtma/files/IDT.ini"
+            android:key="ini_file"
+            android:summary="ini文件路径+文件名"
+            android:title="ini文件" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="基本配置" >
+        <CheckBoxPreference
+            android:defaultValue="1"
+            android:key="register_flag"
+            android:summary="选中需要注册,不选中不注册"
+            android:title="是否要注册" />
+
+        <EditTextPreference
+            android:defaultValue="1"
+            android:key="max_call_num"
+            android:summary="最大并发呼叫数 "
+            android:title="最大并发呼叫数 " />
+        <EditTextPreference
+            android:defaultValue="0"
+            android:key="signal_port"
+            android:summary="信令端口"
+            android:title="信令端口" />
+        <EditTextPreference
+            android:defaultValue="0"
+            android:key="rtp_port"
+            android:summary="RTP媒体端口 "
+            android:title="RTP媒体端口 " />
+        <EditTextPreference
+            android:defaultValue="0"
+            android:key="tcp_port"
+            android:summary="TCP媒体监听端口"
+            android:title="TCP媒体监听端口" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

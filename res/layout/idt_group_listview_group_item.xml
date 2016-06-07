@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="30dip"
+    android:background="@color/green_color_normal" >
+
+    <ImageView
+        android:id="@+id/idt_group_fold_arrow_image"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/idt_group_fold_arrow_image" />
+
+    <ImageView
+        android:id="@+id/idt_default_group_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/idt_group_fold_arrow_image"
+        android:src="@drawable/default_group_image" />
+
+    <TextView
+        android:id="@+id/idt_listview_group_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/idt_default_group_image"
+        android:text="100001" />
+
+    <ImageView
+        android:id="@+id/idt_lock_image"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/idt_listview_group_name"
+        android:src="@drawable/idt_lock" />
+
+    <TextView
+        android:id="@+id/idt_listview_group_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@+id/idt_to_group_message_image"
+        android:text="[10/10]" />
+
+    <ImageView
+        android:id="@+id/idt_to_group_message_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:clickable="true"
+        android:focusable="false"
+        android:src="@drawable/idt_to_group_message_image" />
+
+</RelativeLayout>

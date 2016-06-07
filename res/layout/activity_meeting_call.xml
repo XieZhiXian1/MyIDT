@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#252C39"
+    android:orientation="vertical"
+    android:visibility="visible" >
+
+    <TextView
+        android:id="@+id/group_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/group_call_normal"
+        android:gravity="center_vertical"
+        android:padding="5dp"
+        android:text="会议"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/iv_call_flag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/group_call_listen" />
+
+    <TextView
+        android:id="@+id/tv_group_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1001"
+        android:textColor="#87FEFA"
+        android:textSize="32sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingTop="5dp" >
+
+        <TextView
+            android:id="@+id/tv_talking_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:gravity="center"
+            android:text="主讲人员：空闲"
+            android:textColor="#87FEFA"
+            android:textSize="16sp"
+            android:visibility="visible" />
+
+        <Chronometer
+            android:id="@+id/chronometer_call_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:format="通话时间：%s"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <ImageButton
+                android:id="@+id/btn_speak"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_speak_normal" />
+
+            <SurfaceView
+                android:id="@+id/surfaceView_remote"
+                android:layout_width="50dp"
+                android:layout_height="100dp" />
+
+            <SurfaceView
+                android:id="@+id/surfaceView_local"
+                android:layout_width="50dp"
+                android:layout_height="100dp" 
+                android:layout_marginLeft="20dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/iv_micphone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:src="@drawable/micphone_on" />
+
+        <Button
+            android:id="@+id/btn_hangup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/btn_style_red"
+            android:gravity="center"
+            android:onClick="gotoLogin"
+            android:padding="15dp"
+            android:text="@string/btn_hangup"
+            android:textColor="#ffffff"
+            android:textSize="22sp" />
+
+        <ImageView
+            android:id="@+id/iv_mute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:src="@drawable/mute_on" />
+    </LinearLayout>
+
+</LinearLayout>

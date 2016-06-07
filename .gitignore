@@ -1,0 +1,7 @@
+bin/
+gen/
+jni/android-14
+bin/classes
+jni/SI
+obj/local
+proguard/

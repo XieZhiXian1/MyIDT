@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@drawable/new_ui_metting_notice_border"
+    android:minWidth="280dip"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:background="#0165c8"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:text="拒绝原因"
+        android:textColor="#ffffff"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:id="@+id/content"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/new_ui_metting_alert_border"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/message"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:hint="请填写拒绝原因"
+            android:minHeight="100dp"
+            android:padding="5dip"
+            android:textColor="#FF000000"
+            android:textColorHint="#cccccc"
+            android:textSize="15sp" />
+
+        <requestFocus />
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/positiveButton"
+            android:layout_width="100dp"
+            android:layout_height="40dip"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/new_ui_meeting_alert_ok" />
+
+        <Button
+            android:id="@+id/negativeButton"
+            android:layout_width="100dp"
+            android:layout_height="40dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/new_ui_meeting_alert_cancel" />
+    </RelativeLayout>
+
+</LinearLayout>

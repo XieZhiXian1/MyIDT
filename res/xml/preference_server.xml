@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="帐号信息" >
+        <EditTextPreference
+            android:defaultValue="2053"
+            android:key="phone_number"
+            android:summary="本机号码"
+            android:title="帐号" />
+        <EditTextPreference
+            android:defaultValue="2053"
+            android:key="phone_password"
+            android:summary="密码"
+            android:title="帐号密码" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="连接配置" >
+        <EditTextPreference
+            android:defaultValue="124.160.11.21"
+            android:key="server_ip"
+            android:summary="服务器IP地址"
+            android:title="服务器IP地址" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="位置选项" >
+        <CheckBoxPreference
+            android:defaultValue="1"
+            android:key="gps_flag"
+            android:summary="选中上报位置,不选中不上报"
+            android:title="是否开启GPS" />
+
+        <ListPreference
+            android:defaultValue="30"
+            android:dialogTitle="上报频率"
+            android:entries="@array/gps_period"
+            android:entryValues="@array/gps_period_time"
+            android:key="gps_period_time"
+            android:title="上报时间间隔" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="FTP设置" >
+        <EditTextPreference
+            android:defaultValue="ftp-user-)P"
+            android:key="ftp_account"
+            android:summary="FTP登录帐号"
+            android:title="FTP帐户" />
+        <EditTextPreference
+            android:defaultValue="!@#$0p;/"
+            android:key="ftp_password"
+            android:password="true"
+            android:summary="FTP登录密码"
+            android:title="FTP密码" />
+        <EditTextPreference
+            android:defaultValue="124.160.11.21"
+            android:key="ftp_server_host"
+            android:summary="FTP服务器IP或域名"
+            android:title="FTP地址" />
+        <EditTextPreference
+            android:defaultValue="21218"
+            android:key="ftp_server_port"
+            android:summary="FTP服务器端口"
+            android:title="FTP端口" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

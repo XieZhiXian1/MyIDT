@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dip"
+    >
+
+    <ImageView
+        android:id="@+id/buddy_listview_child_avatar"
+        android:layout_width="25dip"
+        android:layout_height="25dip"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:src="@drawable/new_ui_map_singer_member_p" />
+
+    <TextView
+        android:id="@+id/buddy_listview_child_nick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/buddy_listview_child_avatar"
+        android:text="2051"
+        android:textColor="#000000" />
+
+    <CheckBox
+        android:id="@+id/idt_map_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:clickable="true"
+        android:focusable="false" />
+
+</RelativeLayout>

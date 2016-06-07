@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="font_color_lightBlack">#7D8184</color>
+    <!-- 普通的淡黑色 -->
+    <color name="font_color_black">#353535</color>
+    <!-- 淡黑色 -->
+    <color name="whitefont_color_default">#FFFFFF</color>
+    <color name="whitefont_color_press">#006169</color>
+    <color name="greyfont_color_default">#BDBDBD</color>
+    <color name="greyfont_color_press">#FFFFFF</color>
+    <color name="telfont_color_default">#FFFFFF</color>
+    <color name="telfont_color_press">#DC2650</color>
+    <color name="red">#DB214C</color>
+    <color name="grey">#8E9397</color>
+    <color name="btn_gray_normal">#c0c0c0</color>
+    <color name="normal_grey">#E0E0E0</color>
+    <color name="petition_timeline_text_black">#7B8185</color>
+    <color name="blue_color_normal">#3BB3C2</color>
+    <!-- app的主蓝色 -->
+    <color name="blue_color_selected">#42929D</color>
+    <!-- 深蓝色 -->
+    <color name="yellow_color_normal">#F3AE00</color>
+    <!-- app的主黄色 -->
+    <color name="yellow_color_selected">#FCE8B6</color>
+    <!-- 浅黄色 -->
+    <color name="purple_color_normal">#901E78</color>
+    <!-- app的主紫色 -->
+    <color name="purple_color_selected">#E0BFD9</color>
+    <!-- 浅紫色 -->
+    <color name="green_color_normal">#51A934</color>
+    <!-- app的主绿色 -->
+    <color name="green_color_selected">#CDE7C5</color>
+    <!-- 浅绿色 -->
+    <color name="red_color_normal">#DB214C</color>
+    <!-- app的主红色 -->
+    <color name="red_color_selected">#F5C0CC</color>
+    <!-- 浅红色 -->
+    <color name="gray_70">#707070</color>
+    <!-- 灰色 -->
+    <color name="yin">#BCBBBB</color>
+    <color name="yellow">#F79307</color>
+    <color name="tab_font_normal">#7B8185</color>
+    <color name="tab_font_selected">#ff0064c8</color>
+    <color name="clipheadphoto_confirm_normal">#FEFEFE</color>
+    <color name="clipheadphoto_confirm_selected">#F2F3F3</color>
+    <color name="navi_map_but_selected">#b0278FEC</color>
+    <color name="navi_map_but_normal">#b0ffffff</color>
+    <!-- 以下为新的ui所使用的色值 -->
+    <color name="new_ui_blue">#ff0064c8</color>
+    <color name="new_ui_textcolorhint">#ffcccccc</color>
+    <color name="new_ui_login_setting_page_bk">#fff9f9fa</color>
+    <color name="new_ui_group_item_divider_color">#ffdedfe0</color>
+    <color name="new_ui_meeting_reply_text_color">#959BA2</color></resources>
