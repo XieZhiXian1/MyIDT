@@ -233,10 +233,10 @@
                 </action>
             </intent-filter>
         </service>   
-        <!-- 百度地图key -->
+        <!--3OX057jEfHX0k2dq2kvfuX9X 百度地图key XbfYUbkzUzEjISKMb7dmrUdr2gI2IK8y-->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="3OX057jEfHX0k2dq2kvfuX9X" />
+            android:value="XbfYUbkzUzEjISKMb7dmrUdr2gI2IK8y" />
     </application>
 
 </manifest>

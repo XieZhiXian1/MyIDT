@@ -1591,6 +1591,7 @@ public class IdtChatActivity extends ActivityBase
 			pageNum = 1;
 			LwtLog.d("take_pic", "111111");
 			if (FROM_WHERE == IdtGroup.TO_GROUP) {
+				//CursorLoader异步查询
 				return new CursorLoader(IdtChatActivity.this, SmsProvider.CONTENT_URI, SmsProvider.ALL_PROJECTION,
 						"target_phone_number = '" + callto_group_num + "' and owner_phone_number = '"
 								+ my_phone_number + "'",
@@ -1668,7 +1669,7 @@ public class IdtChatActivity extends ActivityBase
 					// 接收图片信息
 					smsBean.setLayoutID(R.layout.row_received_picture);
 				} else if (smsBean.getSms_resource_type() == 5) {
-					// 接收图片信息
+					// 接收视频信息
 					smsBean.setLayoutID(R.layout.row_received_video);
 				} else if (smsBean.getSms_resource_type() == 2) {
 					// 定位信息
@@ -1708,7 +1709,7 @@ public class IdtChatActivity extends ActivityBase
 					// 发送图片信息
 					smsBean.setLayoutID(R.layout.row_sent_picture);
 				} else if (smsBean.getSms_resource_type() == 5) {
-					// 发送图片信息
+					// 发送视频信息
 					smsBean.setLayoutID(R.layout.row_sent_video);
 				} else if (smsBean.getSms_resource_type() == 2) {
 					// 发送定位信息
@@ -1875,6 +1876,7 @@ public class IdtChatActivity extends ActivityBase
 		}
 		contentValues.put(SmsProvider.KEY_COLUMN_12_OWNER_PHONE_NUMBER, my_phone_number);
 		contentValues.put(SmsProvider.KEY_COLUMN_14_UI_CAUSE, -1);
+		//通过ContentResolver接口将provider的数据存入数据库中
 		Uri uri=getContentResolver().insert(SmsProvider.CONTENT_URI, contentValues);
 		try {
 			IdtApplication.getCurrentCall().setUri(uri);

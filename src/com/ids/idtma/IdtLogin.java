@@ -265,8 +265,9 @@ public class IdtLogin extends ActivityBase implements OnClickListener, IdtLoginP
 				String before_string = login_edit_pwd_editview.getText().toString().trim();
 				String after_string = "";
 				if(before_string.length()>0){
-					after_string = before_string.substring(0, before_string.length()-1);
-					login_edit_pwd_editview.setText(after_string);
+					//after_string = before_string.substring(0, before_string.length()-1);
+					//login_edit_pwd_editview.setText(after_string);
+					login_edit_pwd_editview.setText("");
 				}
 			}
 		});

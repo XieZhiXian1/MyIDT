@@ -139,8 +139,9 @@ public class IdtExpandableListViewAdapter extends BaseExpandableListAdapter {
 		} else {
 			memberHolder.avatar.setImageResource(R.drawable.new_ui_off_line);
 		}
-		memberHolder.memberPhone.setText(idtApplication.getMapUserGroup()
-				.get(idtApplication.getLstGroups().get(groupPosition).getUcNum()).get(childPosition).getUcNum());
+		GroupMember groupMember = idtApplication.getMapUserGroup()
+		.get(idtApplication.getLstGroups().get(groupPosition).getUcNum()).get(childPosition);
+		memberHolder.memberPhone.setText(groupMember.getUcName()+"("+groupMember.getUcNum()+")");
 		memberHolder.toRichText.setOnClickListener(new OnClickListener() {
 
 			@Override

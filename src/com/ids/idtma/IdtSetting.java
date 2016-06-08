@@ -419,9 +419,10 @@ public class IdtSetting extends ActivityBase
 	}
 
 	private void logOff() {
-		SharedPreferencesUtil.setStringPreferences(getApplicationContext(), "phone_number", "");
+		//这个设置是否记录帐号密码IP等
+		//SharedPreferencesUtil.setStringPreferences(getApplicationContext(), "phone_number", "");
 		SharedPreferencesUtil.setStringPreferences(getApplicationContext(), "phone_password", "");
-		SharedPreferencesUtil.setStringPreferences(getApplicationContext(), "server_ip", "");
+		//SharedPreferencesUtil.setStringPreferences(getApplicationContext(), "server_ip", "");
 		SharedPreferencesUtil.setBooleanPreferences(this.getApplicationContext(), "remember_passwd_checkbox_open",
 				false);
 		SharedPreferencesUtil.setBooleanPreferences(this.getApplicationContext(), "auto_login_checkbox_open", false);
@@ -432,7 +433,14 @@ public class IdtSetting extends ActivityBase
 //		Intent intent = new Intent(IdtSetting.this, IdtLogin.class);
 //		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 //		startActivity(intent);
-		outTheApp();
+		IDSApiProxyMgr.getCurProxy().Exit();
+		IDSApiProxyMgr.getCurProxy().unloadLibrary(IdtSetting.this);
+		IdtApplication.getInstance().clearAllActivity();
+		Intent intent = new Intent(IdtSetting.this, IdtLogin.class);
+		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+		startActivity(intent);
+		
+		//outTheApp();//这个是退出整个应用程序
 	}
 
 	@Override
@@ -500,8 +508,14 @@ public class IdtSetting extends ActivityBase
 						public void onClick(DialogInterface dialog, int which) {
 							// TODO Auto-generated method stub
 							switch (which) {
+							//这个是用户注销登录的操作
 							case AlertDialog.BUTTON_POSITIVE:
+								Intent intent = new Intent(IdtSetting.this,IdtLogin.class);
+								//intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 								logOff();
+								
+								
+								finish();
 								if (dialog != null) {
 									dialog.dismiss();
 								}

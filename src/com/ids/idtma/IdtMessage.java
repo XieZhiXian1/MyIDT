@@ -408,6 +408,7 @@ public class IdtMessage extends ActivityBase implements OnItemClickListener, OnC
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 		// TODO Auto-generated method stub
 		Intent intent = new Intent(IdtMessage.this, IdtChatActivity.class);
+		//这个设置是退出整个应用程序
 		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		if(listSmsEntity.get(position).getSms_type()==1){
 			//in
